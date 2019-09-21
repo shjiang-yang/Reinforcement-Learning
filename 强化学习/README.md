@@ -1,9 +1,13 @@
-# Notes-of-DRL
-> 在学习深度强化学习算法过程中的一些笔记！  
+## 强化学习概述  
+> 这是学习强化学习过程中的一些笔记！主要参考来源是[GitHub:  dennybritz/reinforcement-learning](https://github.com/dennybritz/reinforcement-learning)  
 --- 
-### 内容包括：  
-- 强化学习简述  
-- Q_Learning算法  
-- DQN算法  
-- and so on 
---- 
+
+### 主要内容：  
+- [强化学习问题 & OpenAI Gym](强化学习问题&OpenAI_Gym/README.md)  
+- and so on  
+
+
+
+### 算法实现：  
+- pass  
+
