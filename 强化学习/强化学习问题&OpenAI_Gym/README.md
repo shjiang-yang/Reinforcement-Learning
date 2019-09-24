@@ -32,7 +32,7 @@
 
 强化学习的组成要素包括：agent、environment、reward signal、policy、value function。agent是编程者主体能控制的部分；environment是agent身处的环境，agent不能控制其但是与其交互；policy可以认为是在特定状态下采取哪个动作最佳，即状态到动作的映射关系；reward signal定义了强化学习问题，其定义了状态的好坏，但是reward是瞬时的，奖励值低说明agent本次表现不佳，可能需要改变policy了；value function表示了特定状态在完成目标的过程中的价值，即从给定状态起能够获得的累计奖励的预测，某个状态的奖励低不能说明其价值低，其状态可能是实现目标的必要步骤。  
 
-局限（WIP）
+局限（WIP）   
 
 #### **2** [David Silver's RL Course Lecture 1 - Introduction to Reinforcement Learning](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/intro_RL.pdf)  
 
