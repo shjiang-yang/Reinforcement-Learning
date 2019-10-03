@@ -32,9 +32,45 @@
 
 强化学习的组成要素包括：agent、environment、reward signal、policy、value function。agent是编程者主体能控制的部分；environment是agent身处的环境，agent不能控制其但是与其交互；policy可以认为是在特定状态下采取哪个动作最佳，即状态到动作的映射关系；reward signal定义了强化学习问题，其定义了状态的好坏，但是reward是瞬时的，奖励值低说明agent本次表现不佳，可能需要改变policy了；value function表示了特定状态在完成目标的过程中的价值，即从给定状态起能够获得的累计奖励的预测，某个状态的奖励低不能说明其价值低，其状态可能是实现目标的必要步骤。  
 
-局限（WIP）   
+强化学习利用markov决策过程框架来定义agent与environment之间的交互，即[state, actoin, reward, next_state]。  
+
+强化学习发展的历史脉络：  
+- 试错学习，灵感来于动物的学习方法。  
+- 优化控制，方法是值函数和动态规划。  
+- 时间差分方法，试错与优化控制的结合。  
+
 
 #### **2** [David Silver's RL Course Lecture 1 - Introduction to Reinforcement Learning](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/intro_RL.pdf)  
+强化学习与其他机器学习模式的区别：  
+- 没有监督，只有reward信号  
+- reward信号有延迟  
+- 事件间的时间关系很重要  
+- agent的动作可以影响后续与环境交互的数据  
+
+强化学习基于奖励假说（reward hypothesis），即agent的所有目标可以描述为最大化累计奖励。  
+- reward是标量反馈信号  
+- R_t表征agent在step t时表现的好坏  
+- agent就是要最大化累积奖励  
+
+顺序决策为持续对环境变化做出反应，在每个环境状态都选择一个action最大化累积奖励。  
+- 动作的影响作用可能是持续的  
+- reward可能是延迟的  
+- 可能需要牺牲短期奖励，以获得更多长期奖励（如：玩象棋时，有时牺牲某些棋子对最终赢得游戏很有必要）  
+
+agent与environment的关系：  
+![agt&env](image/agt&env.jpg)  
+- 在每个step t处，agent要：（t随着系统的运行逐步增加）  
+   - 接收环境状态 S_t  
+   - 接收奖励值 r_t  
+   - 施加动作 a_t  
+- 在每个step t处，environment要：  
+   - 接收动作 a_t  
+   - 给出下一个环境状态 S_t+1  
+   - 给出奖励值 r_t+1  
+
+一个状态包含所有历史状态的信息，称之为Markov状态。当且仅当状态满足如下关系，该状态具有Markov性。  
+![markov](image/markov.bmp)  
+
 
 
 
