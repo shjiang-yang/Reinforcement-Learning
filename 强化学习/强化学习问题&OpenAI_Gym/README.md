@@ -71,6 +71,15 @@ agent与environment的关系：
 一个状态包含所有历史状态的信息，称之为Markov状态。当且仅当状态满足如下关系，该状态具有Markov性。  
 ![markov](image/markov.bmp)  
 
+一个强化学习agent可能包含一个或多个如下元素：  
+- policy：agent的行为映射关系  
+   - 状态到动作的映射关系  
+   - 确定性policy：  
+   ![dmin_policy](image/dmin_policy.bmp)  
+   - 随机policy：  
+   ![stoc_policy](image\stoc_policy.bmp)  
+- value function：每个state、action、state-action的好坏  
+- model：agent掌握的环境行为模型  
 
 
 
