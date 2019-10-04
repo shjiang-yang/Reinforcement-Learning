@@ -75,9 +75,9 @@ agent与environment的关系：
 - policy：agent的行为映射关系  
    - 状态到动作的映射关系  
    - 确定性policy：  
-   ![dmin_policy](image\dmin_policy.bmp)  
+   ![dmin_policy](image/dmin_policy.bmp)  
    - 随机policy：  
-   ![stoc_policy](image\stoc_policy.bmp)  
+   ![stoc_policy](image/stoc_policy.bmp)  
 - value function：每个state、action、state-action的好坏  
 - model：agent掌握的环境行为模型  
 
