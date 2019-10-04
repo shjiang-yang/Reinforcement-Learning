@@ -3,7 +3,7 @@
 
 
 ### 学习目标  
-- 理解强化学习问题，以及与监督学习的区别  
+- 理解强化学习问题，以及与监督学习和非监督学习的区别  
 - 利用OpenAI Gym中的强化学习环境  
 --- 
 
@@ -120,10 +120,33 @@ agent与environment的关系：
 
 
 #### **3** [OpenAI Gym tutorial](https://gym.openai.com/docs)  
-强化学习算法要真正跑起来，需要把agent放在一个环境中，但写一个较复杂的环境是不易的，于是诞生了Gym库。Gym是一个针对强化学习算法的环境库，其中包含各种环境，让researcher专注于研究强化学习算法，环境交给Gym，可直接调用。
+强化学习算法要真正跑起来，需要把agent放在一个环境中，但写一个较复杂的环境是不易的，于是诞生了Gym库。Gym是一个针对强化学习算法的环境库，其中包含各种环境，让researcher专注于研究强化学习算法，环境交给Gym，可直接调用。  
+
+Gym中每个env包含的模块有：  
+- reset  
+   - 重置当前环境  
+   - 返回重置后环境的state  
+- step  
+   - agent与环境交互  
+   - 输入agent选择的action  
+   - 返回施加action后的next_state, reward, done(是否该重置环境), info(一些调试信息)  
+- render  
+   - 渲染环境画面  
+
+查询环境的动作空间和状态空间的方法：  
+- action_space  
+   - 方法：env.action_space  
+   - env.action_space.n动作的个数  
+   - Discrete(n)表示动作可取[0, 1, ..., n]的离散数字  
+   - 动作空间也可能是连续的  
+- state_space  
+   - 方法：env.observation_space  
+   - env.observation_space.shape状态空间维度信息  
+   - Box(n, )表示状态空间是n维的，即state=[m1, m2, ..., mn]  
+   - env.observation_space.high可以得到动作空间的上界  
+   - env.observation_space.low可以得到动作空间的下界  
+
 
 --- 
-
-
 ### 练习  
 - [调用OpenAI Gym环境](code/OpenAI_Gym_EnvTest.py)  
