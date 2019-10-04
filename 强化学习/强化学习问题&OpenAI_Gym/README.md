@@ -79,15 +79,51 @@ agent与environment的关系：
    - 随机policy：  
    ![stoc_policy](image/stoc_policy.bmp)  
 - value function：每个state、action、state-action的好坏  
+   - 值函数是未来累积奖励的期望值  
+   - 以评估每个state、action、state-action的好坏，基于此选择合适的动作  
+   - 状态值函数有如下形式：  
+   ![value_f](image/value_f.bmp)  
 - model：agent掌握的环境行为模型  
+   - 以预测环境的下一步行为  
+   - 包括预测下一步的state和reward  
+   - 形式如下：  
+   ![model](image/model.bmp)  
 
+强化学习按是否基于值函数/策略分类：  
+- value based  
+   - ~~policy~~  
+   - value function  
+- policy based  
+   - policy  
+   - ~~value function~~  
+- actor critic  
+   - policy  
+   - value function  
+
+强化学习按有无模型分类：  
+- model free  
+   - policy or/and value function  
+   - ~~model~~  
+- model based  
+   - policy or/and value function  
+   - model  
+
+连续决策中的两类方法——learning、planing，其区别为：  
+- reinforcement learning  
+   - 初始时，环境模型未知  
+   - agent与环境交互  
+   - agent逐步改善策略  
+- planing  
+   - 环境模型已知  
+   - 利用环境模型，agent可以计算出策略  
+   - agent改善策略  
 
 
 #### **3** [OpenAI Gym tutorial](https://gym.openai.com/docs)  
-
+强化学习算法要真正跑起来，需要把agent放在一个环境中，但写一个较复杂的环境是不易的，于是诞生了Gym库。Gym是一个针对强化学习算法的环境库，其中包含各种环境，让researcher专注于研究强化学习算法，环境交给Gym，可直接调用。
 
 --- 
 
 
 ### 练习  
-- [调用OpenAI Gym环境](OpenAI_Gym_EnvTest.py)  
+- [调用OpenAI Gym环境](code/OpenAI_Gym_EnvTest.py)  
