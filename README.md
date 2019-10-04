@@ -3,7 +3,7 @@
 --- 
 
 ### 主要内容：  
-- [强化学习问题 & OpenAI Gym](强化学习问题_and_OpenAI_Gym/)  
+- [强化学习问题 and OpenAI Gym](强化学习问题_and_OpenAI_Gym/)  
 - and so on  
 
 
