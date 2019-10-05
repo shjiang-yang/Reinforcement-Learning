@@ -18,6 +18,7 @@ def test_env():
             state_, reward, done, info = env.step(action)
             print("{0}  |  {1}  |  {2}  |  {3}"
                   .format(state, action, reward, state_))
+            state = state_
             if done:
                 print("episode finished after {} timesteps".format(t+1))
                 break
