@@ -64,7 +64,7 @@ class DQN_AGENT():
                                                 action_space_dim = action_space_dim)
 #         define parameters
         self.gamma = 0.9
-        self.epsilon = 0.9
+        self.epsilon = 0.5
         self.epsilon_decrease = 1e-4
         self.learning_steps = 0
         self.target_Model_update_per_step = 100

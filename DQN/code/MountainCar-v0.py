@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from DQN_AGENT import DQN_AGENT
+from DQN import DQN_AGENT
 import gym
 import tensorflow as tf
 
-env = gym.make('CartPole-v1')
+env = gym.make('MountainCar-v0')
 
 
 agent = DQN_AGENT(action_space_n= env.action_space.n, \
@@ -14,9 +14,9 @@ agent = DQN_AGENT(action_space_n= env.action_space.n, \
                     experience_pool_size=2000)
 
 
-episode = 1
+episode = 0
 test_per_episode = 20
-test_episodes = 5
+test_episodes = 10
 
 step = 0
 
@@ -28,8 +28,8 @@ while True:
     while not done:
         action = agent.get_action(obs)
         obs_, reward, done, info = env.step(action)
- 
-        reward = -abs(obs_[0]) - abs(obs_[2]) * 10
+
+        reward = max(obs_[0] + 0.2, 0.0) * 10.0 + abs(obs_[1]) * 100.0 -1.0
 
         ready = agent.add_experience(obs, action, reward, obs_, done)
 
@@ -45,7 +45,7 @@ while True:
 
     # test
     if episode % test_per_episode == 0 and ready:
-        total_reward = 0
+        total_reward = 0.0
 
         print("\n------------------ evaluating -----------------")
         for _ in range(test_episodes):
@@ -55,6 +55,11 @@ while True:
                 action = agent.get_action(observation, epsilon_greedy=False)
                 env.render()
                 observation_, reward, done, info = env.step(action)
+
+                reward = max(obs_[0] + 0.2, 0.0) * 10.0 + abs(obs_[1]) * 100.0 -1.0
+
+
+
                 observation = observation_
                 total_reward += reward
         
